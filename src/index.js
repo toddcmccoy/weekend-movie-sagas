@@ -51,6 +51,14 @@ const genres = (state = [], action) => {
             return state;
     }
 }
+const descriptions = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_DESCRIPTIONS':
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 // Create one store that all components can use
 const storeInstance = createStore(
