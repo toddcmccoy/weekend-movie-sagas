@@ -1,4 +1,23 @@
+body{
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: fantasy;
+}
+header{
+    background-color: firebrick;
+}
+img{
+    box-shadow: 15px 20px #000000;
+}
+
+img:hover{
+    box-shadow: 20px 30px #188088;
+}
+
 .movies {
-    display : flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
 }

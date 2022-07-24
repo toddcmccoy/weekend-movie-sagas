@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
+import "../App/App.css";
 
 function Details() {
 
@@ -32,20 +33,20 @@ function Details() {
     }
 // display of the movie details and associated genres selected for that movie
     return (
-        <div>
+        <div className="card">
             {movieDetails.map((movieDetail) =>{
                 return (
-                <div key={movieDetail.id}>
+                <div className="container" key={movieDetail.id}>
                     <h1>{movieDetail.title}</h1>
-                    <img src ={movieDetail.poster}/><br/>
+                    <img src ={movieDetail.poster}/><br/><br/>
                         <p>{movieDetail.description}</p>
                 </div>
                 );
             })}
-                        <h3>Genres</h3>
+                        <h2>Genres</h2>
                         {movieGenres.map((genres, i) => {
                             return(
-                            <h4 key={i}>{genres.name}</h4>
+                            <h3 key={i}>{genres.name}</h3>
                             )
                         })}
             <button onClick = {backToMovies}>Back to Movie List</button>
