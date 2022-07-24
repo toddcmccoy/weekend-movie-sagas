@@ -51,7 +51,9 @@ function Details() {
                             <h3 key={i}>{genres.name}</h3>
                             )
                         })}
+            <div>
             <button onClick = {backToMovies}>Back to Movie List</button>
+            </div>
     </div>
     )
 }

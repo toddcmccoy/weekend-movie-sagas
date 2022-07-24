@@ -12,7 +12,7 @@ img{
 }
 
 img:hover{
-    box-shadow: 20px 30px #188088;
+    box-shadow: 20px 30px firebrick;
 }
 
 .movies {
