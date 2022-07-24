@@ -5,13 +5,33 @@ import { useParams } from 'react-router-dom';
 function Details() {
 
     const dispatch = useDispatch();
+    const movieDetails = useSelector(store => store.details);
     const movieId = useParams();
 
+    useEffect(() => {
+        dispatch({
+            type: 'GET_DETAILS',
+            payload: movieId
+        })
+    },[]);
 
+    return (
+        <>
+        <div>
+            <ul>{movieDetails.map(movieDetail =>
+                <li key={movieDetail.id}>
+                    <div>{movieDetail.title}</div>
+                    <img src ={movieDetail.poster}/><br/>
+                    <div>
+                        {movieDetail.description}
+                    </div>
+                </li>
+                )}
+            </ul>
+        </div>
+        </>
+    )
 }
-
-
-
 
 
 export default Details;
