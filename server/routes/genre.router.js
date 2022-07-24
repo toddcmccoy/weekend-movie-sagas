@@ -3,7 +3,6 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
-    console.log('in router.get genres', req.params.id);
     let id = req.params.id
     const queryText = 
     `SELECT "genres"."name" 
@@ -32,7 +31,5 @@ router.get('/details/:id', (req, res) => {
     res.sendStatus( 500 );
     });
 });
-
-module.exports = router;
 
 module.exports = router;
