@@ -8,15 +8,18 @@ function MovieList() {
     const dispatch = useDispatch();
     const history = useHistory();
     const movies = useSelector(store => store.movies);
-
+// useEffect to get all movies from the db on page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
-
+//handleClick to take use to the detail page for that movie
     const handleClick = (id) => {
         history.push(`/details/${id}`)
     }
+    // end handleClick function
 
+
+    // display the movie list on the page
     return (
         <main>
             <h1>MovieList</h1>
