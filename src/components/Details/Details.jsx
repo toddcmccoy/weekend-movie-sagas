@@ -11,13 +11,15 @@ function Details() {
     const movieDetails = useSelector(store => store.details);
     const movieGenres = useSelector(store => store.genres);
     const id = useParams();
-
+// get details of the individual movie on page load
     useEffect(() => {
         dispatch({
             type: 'GET_DETAILS',
             payload: id
         })
     },[]);
+
+// get genres of the movie on page load
 
     useEffect(() => {
         dispatch({
