@@ -13,8 +13,8 @@ function MovieList() {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
-    const handleClick = (movieId) => {
-        history.push(`/details/${movieId}`)
+    const handleClick = (id) => {
+        history.push(`/details/${id}`)
     }
 
     return (

@@ -6,12 +6,12 @@ function Details() {
 
     const dispatch = useDispatch();
     const movieDetails = useSelector(store => store.details);
-    const movieId = useParams();
+    const id = useParams();
 
     useEffect(() => {
         dispatch({
             type: 'GET_DETAILS',
-            payload: movieId
+            payload: id
         })
     },[]);
 
