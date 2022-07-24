@@ -17,34 +17,38 @@ function Details() {
         })
     },[]);
 
+    useEffect(() => {
+        dispatch({
+            type: 'GET_GENRES',
+            payload: id
+        })
+    },[]);
+
+    
+
     const backToMovies = () => {
         history.push(`/`);
     }
 
     return (
-        <>
         <div>
-            <ul>{movieDetails.map(movieDetail =>
-                <li key={movieDetail.id}>
-                    <div>{movieDetail.title}</div>
+            {movieDetails.map((movieDetail) =>{
+                return (
+                <div key={movieDetail.id}>
+                    <h1>{movieDetail.title}</h1>
                     <img src ={movieDetail.poster}/><br/>
-                    <div>
-                        {movieDetail.description}
-                    </div><br/>
-                    <div>
+                        <p>{movieDetail.description}</p>
+                </div>
+                );
+            })}
                         <h3>Genres</h3>
-                        
-                        {movieGenres.map((genre, i) => {
+                        {movieGenres.map((genres, i) => {
                             return(
-                                <li key={i}>{genre.name}</li>
+                            <h4 key={i}>{genres.name}</h4>
                             )
                         })}
-                    </div>
-                </li>
-                )}
-            </ul>
-        </div>
-        </>
+            <button onClick = {backToMovies}>Back to Movie List</button>
+    </div>
     )
 }
 

@@ -14,13 +14,12 @@ router.get('/:id', (req, res) => {
     .then(result => {
     res.send(result.rows);
     }).catch(error => {
-    console.log('error in router.get', error)
+    console.log('error in get', error)
     res.sendStatus(500);
     })
 });
 
 router.get('/details/:id', (req, res) => {
-    console.log( 'in router.get genres/details/id:', req.params.id );
     let id = req.params.id
     const queryText = `SELECT * FROM "movies" WHERE "movies"."id" = ${id};`;
     pool.query(queryText)
