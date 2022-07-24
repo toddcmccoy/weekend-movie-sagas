@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 function Details() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
     const movieDetails = useSelector(store => store.details);
-    const movieGenres = useSelector (store => store.genres);
+    const movieGenres = useSelector(store => store.genres);
     const id = useParams();
 
     useEffect(() => {
@@ -15,6 +16,10 @@ function Details() {
             payload: id
         })
     },[]);
+
+    const backToMovies = () => {
+        history.push(`/`);
+    }
 
     return (
         <>
@@ -28,9 +33,10 @@ function Details() {
                     </div><br/>
                     <div>
                         <h3>Genres</h3>
+                        
                         {movieGenres.map((genre, i) => {
                             return(
-                                <h6 key={i}>{genre.name}</h6>
+                                <li key={i}>{genre.name}</li>
                             )
                         })}
                     </div>

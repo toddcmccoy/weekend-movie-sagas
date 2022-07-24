@@ -45,8 +45,7 @@ function* getDetails (action) {
 }
 function* getGenres (action) {
     try{
-        const id = action.payload;
-        const response = yield axios.get(`/api/genre/${id}`);
+        const response = yield axios.get(`/api/genre/${action.payload.id}`);
         yield put({ type: 'SET_GENRES', payload: response.data});
     }catch{
         console.log('error in getGenres', error);
