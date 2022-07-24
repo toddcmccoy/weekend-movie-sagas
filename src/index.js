@@ -43,6 +43,7 @@ function* getDetails (action) {
     }
         
 }
+// get all genres from the associated movies on the db
 function* getGenres (action) {
     try{
         const response = yield axios.get(`/api/genre/${action.payload.id}`);
@@ -74,7 +75,7 @@ const genres = (state = [], action) => {
             return state;
     }
 }
-
+// used to store the movie details
 const details = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAILS':

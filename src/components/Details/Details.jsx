@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 
 function Details() {
 
+    // connecting this page to the information in the store
     const dispatch = useDispatch();
     const history = useHistory();
     const movieDetails = useSelector(store => store.details);
@@ -25,11 +26,11 @@ function Details() {
     },[]);
 
     
-
+    // function to allow the user to return to the main list page
     const backToMovies = () => {
         history.push(`/`);
     }
-
+// display of the movie details and associated genres selected for that movie
     return (
         <div>
             {movieDetails.map((movieDetail) =>{

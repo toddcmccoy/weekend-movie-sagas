@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool')
 
+
+// GET request to get movie and genre information from the db
+// joins the movies table to the genres table through the junction table movies_genres
 router.get('/:id', (req, res) => {
     let id = req.params.id
     const queryText = 
@@ -19,6 +22,7 @@ router.get('/:id', (req, res) => {
     })
 });
 
+// GET request for the individual movie to appear on the details page
 router.get('/details/:id', (req, res) => {
     let id = req.params.id
     const queryText = `SELECT * FROM "movies" WHERE "movies"."id" = ${id};`;
