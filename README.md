@@ -34,7 +34,7 @@ Reactjs
 Redux
 Sagas
 
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thank you to my instructor, Liz, and my Jemisin Cohort 🌊 team. A special thanks to Dane for stepping in during a challenging week to teach React and ensure we were able to work and learn successfully while remote.
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. Thank you to my instructor, Liz, and my Jemisin Cohort 🌊 team. 
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
